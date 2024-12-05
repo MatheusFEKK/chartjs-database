@@ -22,6 +22,11 @@
         echo $rows->produtos;
     }
 
+    foreach ($user->readAllClientes() as $users)
+    {
+      echo $users->users;
+    }
+
 ?>
     <canvas id="myChart">
 
@@ -36,7 +41,7 @@ new Chart(ctx, {
     labels: ['Produtos', 'Vendas'],
     datasets: [{
       label: '# of Votes',
-      data: [<?=$rows->produtos?>],
+      data: [<?=$rows->produtos?>, <?=$users->users?>],
       borderWidth: 1
     }]
   },
